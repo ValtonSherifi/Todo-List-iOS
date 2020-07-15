@@ -57,3 +57,13 @@ class TODOListTableViewController: UITableViewController {
                                      style: .cancel)
     
     alert.addTextField()
+    alert.addAction(saveAction)
+    alert.addAction(cancelAction)
+    
+    present(alert, animated: true, completion: nil)
+  }
+  
+  @objc func userCountButtonDidTouch() {
+    performSegue(withIdentifier: listToUsers, sender: nil)
+  }
+}
