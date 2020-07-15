@@ -44,3 +44,16 @@ class TODOListTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
+  
+  // MARK: Add Item
+  @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+    let alert = UIAlertController(title: "TO DO",
+                                  message: "Add Task",
+                                  preferredStyle: .alert)
+    
+    let saveAction = UIAlertAction(title: "Save", style: .default)
+    
+    let cancelAction = UIAlertAction(title: "Cancel",
+                                     style: .cancel)
+    
+    alert.addTextField()
