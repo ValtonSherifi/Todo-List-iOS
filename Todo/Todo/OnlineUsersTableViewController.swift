@@ -8,3 +8,14 @@
 import UIKit
 
 class OnlineUsersTableViewController: UITableViewController {
+  // MARK: Constants
+  let userCell = "UserCell"
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  // MARK: UIViewController Lifecycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
