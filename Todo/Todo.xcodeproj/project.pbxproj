@@ -14,6 +14,7 @@
 		524BC3BA24BFA2E6009A0A78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524BC3B924BFA2E6009A0A78 /* Assets.xcassets */; };
 		524BC3BD24BFA2E6009A0A78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524BC3BB24BFA2E6009A0A78 /* LaunchScreen.storyboard */; };
 		524BC3C924BFA74F009A0A78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BC3C824BFA74F009A0A78 /* LoginViewController.swift */; };
+		524BC3CB24BFAEA6009A0A78 /* TODOListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BC3CA24BFAEA6009A0A78 /* TODOListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		524BC3BC24BFA2E6009A0A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		524BC3BE24BFA2E6009A0A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524BC3C824BFA74F009A0A78 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		524BC3CA24BFAEA6009A0A78 /* TODOListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				524BC3AF24BFA2E4009A0A78 /* Todo */,
-				524BC3AE24BFA2E4009A0A78 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +54,7 @@
 				524BC3AD24BFA2E4009A0A78 /* Todo.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		524BC3AF24BFA2E4009A0A78 /* Todo */ = {
@@ -61,11 +63,13 @@
 				524BC3B024BFA2E4009A0A78 /* AppDelegate.swift */,
 				524BC3B224BFA2E4009A0A78 /* SceneDelegate.swift */,
 				524BC3B424BFA2E4009A0A78 /* ViewController.swift */,
+				524BC3CA24BFAEA6009A0A78 /* TODOListTableViewController.swift */,
 				524BC3B624BFA2E4009A0A78 /* Main.storyboard */,
 				524BC3B924BFA2E6009A0A78 /* Assets.xcassets */,
 				524BC3BB24BFA2E6009A0A78 /* LaunchScreen.storyboard */,
 				524BC3BE24BFA2E6009A0A78 /* Info.plist */,
 				524BC3C824BFA74F009A0A78 /* LoginViewController.swift */,
+				524BC3AE24BFA2E4009A0A78 /* Products */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -144,6 +148,7 @@
 				524BC3C924BFA74F009A0A78 /* LoginViewController.swift in Sources */,
 				524BC3B524BFA2E4009A0A78 /* ViewController.swift in Sources */,
 				524BC3B124BFA2E4009A0A78 /* AppDelegate.swift in Sources */,
+				524BC3CB24BFAEA6009A0A78 /* TODOListTableViewController.swift in Sources */,
 				524BC3B324BFA2E4009A0A78 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
