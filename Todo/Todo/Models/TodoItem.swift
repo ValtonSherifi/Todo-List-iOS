@@ -1,15 +1,17 @@
 //
 //  TodoItem.swift
-//  Todo
+//  TODO
 //
-//  Created by Djellza Rrustemi on 7/17/20.
+//  Created by Djellza Rrustemi on 7/15/20.
 //  Copyright © 2020 Valton Sherifi. All rights reserved.
 //
+
 
 import Foundation
 import Firebase
 
 struct TodoItem {
+  
   let ref: DatabaseReference?
   let key: String
   let name: String
@@ -24,7 +26,7 @@ struct TodoItem {
     self.completed = completed
   }
   
-    init?(snapshot: DataSnapshot) {
+  init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? [String: AnyObject],
       let name = value["name"] as? String,
@@ -32,9 +34,19 @@ struct TodoItem {
       let completed = value["completed"] as? Bool else {
       return nil
     }
-       self.ref = snapshot.ref
+    
+    self.ref = snapshot.ref
     self.key = snapshot.key
     self.name = name
     self.addedByUser = addedByUser
     self.completed = completed
   }
+  
+  func toAnyObject() -> Any {
+    return [
+      "name": name,
+      "addedByUser": addedByUser,
+      "completed": completed
+    ]
+  }
+}
