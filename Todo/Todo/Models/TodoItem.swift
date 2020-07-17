@@ -10,4 +10,16 @@ import Foundation
 import Firebase
 
 struct TodoItem {
-}
+  let ref: DatabaseReference?
+  let key: String
+  let name: String
+  let addedByUser: String
+  var completed: Bool
+  
+  init(name: String, addedByUser: String, completed: Bool, key: String = "") {
+    self.ref = nil
+    self.key = key
+    self.name = name
+    self.addedByUser = addedByUser
+    self.completed = completed
+  }
