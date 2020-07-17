@@ -18,6 +18,7 @@
 		524BC3CF24BFB233009A0A78 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BC3CE24BFB233009A0A78 /* OnlineUsersTableViewController.swift */; };
 		524BC3E124C23A87009A0A78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524BC3E024C23A87009A0A78 /* GoogleService-Info.plist */; };
 		524BC3E324C23B87009A0A78 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BC3E224C23B87009A0A78 /* User.swift */; };
+		524BC3E524C23E3A009A0A78 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BC3E424C23E3A009A0A78 /* TodoItem.swift */; };
 		F15C89D81C50EA7F0F45B2E2 /* libPods-Todo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DA85D7C6CC0558AC371313 /* libPods-Todo.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		524BC3CE24BFB233009A0A78 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		524BC3E024C23A87009A0A78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		524BC3E224C23B87009A0A78 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		524BC3E424C23E3A009A0A78 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		82291709D5CBE2C1FCF2248F /* Pods-Todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo.debug.xcconfig"; path = "Target Support Files/Pods-Todo/Pods-Todo.debug.xcconfig"; sourceTree = "<group>"; };
 		D8DA85D7C6CC0558AC371313 /* libPods-Todo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Todo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				524BC3E224C23B87009A0A78 /* User.swift */,
+				524BC3E424C23E3A009A0A78 /* TodoItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				524BC3CF24BFB233009A0A78 /* OnlineUsersTableViewController.swift in Sources */,
 				524BC3CB24BFAEA6009A0A78 /* TODOListTableViewController.swift in Sources */,
 				524BC3B324BFA2E4009A0A78 /* SceneDelegate.swift in Sources */,
+				524BC3E524C23E3A009A0A78 /* TodoItem.swift in Sources */,
 				524BC3E324C23B87009A0A78 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
