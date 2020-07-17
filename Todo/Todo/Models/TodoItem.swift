@@ -32,3 +32,9 @@ struct TodoItem {
       let completed = value["completed"] as? Bool else {
       return nil
     }
+       self.ref = snapshot.ref
+    self.key = snapshot.key
+    self.name = name
+    self.addedByUser = addedByUser
+    self.completed = completed
+  }
