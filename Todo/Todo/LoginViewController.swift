@@ -84,6 +84,25 @@ class LoginViewController: UIViewController {
         }
       }
     }
+      //Krijimi i butonit Cancel
+    let cancelAction = UIAlertAction(title: "Cancel",
+                                     style: .cancel)
+   //Vendosja e pershkrimit ne textfield
+    alert.addTextField { textEmail in
+      textEmail.placeholder = "Enter your email"
+    }
+    //Vendosja e pershkrimit ne textfield
+    alert.addTextField { textPassword in
+      textPassword.isSecureTextEntry = true
+      textPassword.placeholder = "Enter your password"
+    }
+    
+    alert.addAction(saveAction)
+    alert.addAction(cancelAction)
+    
+    present(alert, animated: true, completion: nil)
+  }
+}
 
 extension LoginViewController: UITextFieldDelegate {
     
