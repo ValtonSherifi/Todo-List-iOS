@@ -6,6 +6,7 @@
 //  Copyright © 2020 Valton Sherifi. All rights reserved.
 //
 import UIKit
+import Firebase
 
 class OnlineUsersTableViewController: UITableViewController {
   // MARK: Constants
