@@ -73,9 +73,12 @@ class TODOListTableViewController: UITableViewController {
       }
     })
   }
-  // MARK: UITableView Delegate methods
+   // MARK: UITableView Delegate methods
+//Metodat per funksionalitetin e tabelave
+    
+  //Numri i rreshtave në tabele
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return items.count // Numerimi i listes
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
