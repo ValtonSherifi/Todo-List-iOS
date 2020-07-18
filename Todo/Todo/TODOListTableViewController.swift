@@ -81,13 +81,54 @@ class TODOListTableViewController: UITableViewController {
     return items.count // Numerimi i listes
   }
   
+  //Krijimi i rrreshtave ne baze te te dhenave ne vargun Items
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+    let todoItem = items[indexPath.row]
+    //vendosja e vlerave ne labela, ne baze te vargut te te dhenave Item
+    cell.textLabel?.text = todoItem.name
+    cell.detailTextLabel?.text = todoItem.addedByUser
+    
+    toggleCellCheckbox(cell, isCompleted: todoItem.completed)
+    
     return cell
   }
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
+  }
+  // Funksioni i cili na lejo me e fshi items ne tabele duke bere swipe
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+          let todoItem = items[indexPath.row]// varesisht se cilin rresht duam ta fshijme, mirret index i rreshtit
+          todoItem.ref?.removeValue() // fshirja e te dhenes nga lista e te dhenave ne databaze
+        }
+
+    }
+  //didSelectRowAt eshte funksionaliteti kur te selektojme nje rresht ne tabele
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) else { return }
+    let todoItem = items[indexPath.row]// marrja e indeksit te cilin rresht e selektojme
+    let toggledCompletion = !todoItem.completed
+    toggleCellCheckbox(cell, isCompleted: toggledCompletion) // thirret funksioni per ta dizajni rreshtin me tik nese eshte e selektume
+    
+    // Editimi i te dhenave ne databaze, nese eshte rreshti i selektuar(kompletuar)
+    todoItem.ref?.updateChildValues([
+      "completed": toggledCompletion
+      ])
+  }
+  //Kjo metode ka per funksion te i jep dizajnin e rreshtit nese eshte apo jo i selektuar
+  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
+    if !isCompleted {
+      cell.accessoryType = .none
+      cell.textLabel?.textColor = .black
+      cell.detailTextLabel?.textColor = .black
+    } else {
+      cell.accessoryType = .checkmark
+      cell.textLabel?.textColor = .gray
+      cell.detailTextLabel?.textColor = .gray
+    }
+  }
   }
   
   // MARK: Add Item
