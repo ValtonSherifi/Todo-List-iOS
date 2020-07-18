@@ -105,14 +105,15 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == textFieldLoginEmail {
-            textFieldLoginPassword.becomeFirstResponder()
-        }
-        if textField == textFieldLoginPassword {
-            textField.resignFirstResponder()
-        }
-        return true
+  //textFieldShouldReturn eshte funksion i cili i jep funksion edhe tastieres, nese duam te kalojme nga nje fushe ne tjetren me kete funksion, mundemi duke perdor tastin enter ne tastier
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == textFieldLoginEmail {// nese kursori eshte ne fushen e Email
+      textFieldLoginPassword.becomeFirstResponder()//me tastin enter kalojme ne fushen Login
     }
+    if textField == textFieldLoginPassword {// nese kursori eshte ne fushen e password
+      textField.resignFirstResponder()
+    }
+    return true
+  }
 }
+
