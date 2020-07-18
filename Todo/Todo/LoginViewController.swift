@@ -38,21 +38,30 @@ class LoginViewController: UIViewController {
     }
   }
 
-    // MARK: Actions
-    @IBAction func loginDidTouch(_ sender: AnyObject) {
-        guard
-            let email = textFieldLoginEmail.text,
-            let password = textFieldLoginPassword.text,
-            email.count > 0,
-            password.count > 0
-            else {
-                let alertContoller = UIAlertController (title: "Error" , message: "Error Message " , preferredStyle:UIAlertController.Style.alert)
-                alertContoller.addAction(UIAlertAction(title: "OK", style:UIAlertAction.Style.default , handler: nil))
-                present(alertContoller, animated: true, completion: nil)
-                return
-        }
-        self.performSegue(withIdentifier: self.loginToList, sender: nil)
+    // //Eshte variabel e cila i jep funksionalitet butonit te loginit
+  @IBAction func loginDidTouch(_ sender: AnyObject) {
+    //Kontrollohen te dhenat e textfieldave email dhe password, nese nuk kan te dhana nuk vazhdohet me tutje
+    guard
+      let email = textFieldLoginEmail.text,
+      let password = textFieldLoginPassword.text,
+      email.count > 0,
+      password.count > 0
+      else {
+        return
     }
+    //Verifikimi i vlerave te userit, pas verifikimit te sukseshem  te dhenat jane te shtuara me sukses
+    Auth.auth().signIn(withEmail: email, password: password) { user, error in
+      if let error = error, user == nil {
+        let alert = UIAlertController(title: "Sign In Failed",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        self.present(alert, animated: true, completion: nil)
+      }
+    }
+  }
     
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Register",
