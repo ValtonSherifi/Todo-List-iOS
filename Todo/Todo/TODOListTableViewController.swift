@@ -2,7 +2,7 @@
 //  TODOListTableViewController.swift
 //  TODO
 //
-//  Created by Valton Sherifi on 7/12/20.
+//  Created by Djellza Rrustemi on 7/15/20.
 //  Copyright © 2020 Valton Sherifi. All rights reserved.
 //
 
@@ -13,24 +13,24 @@ class TODOListTableViewController: UITableViewController {
 
   // MARK: Constants
   let listToUsers = "ListToUsers"
-  //Mark: Properties
-    var items : [TodoItem] = [] // inicializimi i modelit per listen e te dhenave Todo
-    var user: User! // inicializimi i modelit te Usar-ave
-    var userCountBarButtonItem: UIBarButtonItem! // Inicializimi i butonit ne navigation
+  
+  // MARK: Properties
+  var items: [TodoItem] = [] // incializimi i modelit per listen e te dhenave Todo
+    var user: User! // inicializimi i modelit te User-ave
+  var userCountBarButtonItem: UIBarButtonItem! // Inicializimi i butonit ne navigation
     
-    //Konektimi me Databaze
-    let ref = Database.database().reference(withPath: "todo-items") //krijimi i tabeles todo-items ne firebase
-    let userRef = Database.database().reference(withPath: "online") // krijimi i tabeles online per perdorues ne firebase
-    
+  //Konektimi me Databaze
+  let ref = Database.database().reference(withPath: "todo-items") // krijimi i tabeles todo-items ne firebase
+  let usersRef = Database.database().reference(withPath: "online") // krijimi i tabeles online per perdorues  ne firebase
+  
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
-  
-  // MARK: UIViewController Lifecycle
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
-  tableView.allowsMultipleSelectionDuringEditing = false // Lejimi i selektimit te rreshtit ne tabele
+    tableView.allowsMultipleSelectionDuringEditing = false // Lejimi i selektimit te rreshtit ne tabele
     // Bashkangjitja e funksionalitetit ne butonin per numerimin e userave
     userCountBarButtonItem = UIBarButtonItem(title: "1",
                                              style: .plain,
@@ -55,7 +55,8 @@ class TODOListTableViewController: UITableViewController {
        //Refreshimi i tabeles
       self.tableView.reloadData()
     })
-       Auth.auth().addStateDidChangeListener { auth, user in
+
+    Auth.auth().addStateDidChangeListener { auth, user in
       guard let user = user else { return }
       self.user = User(authData: user)
       
@@ -73,7 +74,8 @@ class TODOListTableViewController: UITableViewController {
       }
     })
   }
-   // MARK: UITableView Delegate methods
+  
+  // MARK: UITableView Delegate methods
 //Metodat per funksionalitetin e tabelave
     
   //Numri i rreshtave në tabele
@@ -81,7 +83,7 @@ class TODOListTableViewController: UITableViewController {
     return items.count // Numerimi i listes
   }
   
-  //Krijimi i rrreshtave ne baze te te dhenave ne vargun Items
+    //Krijimi i rrreshtave ne baze te te dhenave ne vargun Items
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
     let todoItem = items[indexPath.row]
@@ -129,9 +131,8 @@ class TODOListTableViewController: UITableViewController {
       cell.detailTextLabel?.textColor = .gray
     }
   }
-  }
   
-// MARK: Insertimi i te dhenave  ne tabele
+  // MARK: Insertimi i te dhenave  ne tabele
     
     //Eshte variabel e cila i jep ne funksionalitet butonit
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
@@ -167,7 +168,6 @@ class TODOListTableViewController: UITableViewController {
     
     present(alert, animated: true, completion: nil)
   }
-  
   //Funksionaliteti per dergimin nga butoni i krijuar me lart userCountBarButtonItem per te derguar ne screen-in per user-a
   @objc func userCountButtonDidTouch() {
     performSegue(withIdentifier: listToUsers, sender: nil)
