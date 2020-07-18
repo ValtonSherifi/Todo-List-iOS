@@ -131,18 +131,37 @@ class TODOListTableViewController: UITableViewController {
   }
   }
   
-  // MARK: Add Item
+// MARK: Insertimi i te dhenave  ne tabele
+    
+    //Eshte variabel e cila i jep ne funksionalitet butonit
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "TO DO",
-                                  message: "Add Task",
-                                  preferredStyle: .alert)
-    
-    let saveAction = UIAlertAction(title: "Save", style: .default)
-    
+    //Paraqitja e shtimit te te dhenave si alert(Pop-up)
+    let alert = UIAlertController(title: "TO DO",//titulli i alertit
+                                  message: "Add Task", // Udhezimi
+                                  preferredStyle: .alert) // forma e paraqitjes se alertit
+    //butoni Save ne Alert
+    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+        //Kontollimi nese ka te dhena ne fushat e tekstit(textfields), nese nuk ka nderpritet funksioni
+      guard let textField = alert.textFields?.first,
+        let text = textField.text else { return }
+      
+        //nese ka te dhena te shkruara ne fushat e tekstit(textfields) behet insertimi i te dhenave ne model
+      let todoItem = TodoItem(name: text,
+                                    addedByUser: self.user.email,
+                                    completed: false)
+
+      let todoItemRef = self.ref.child(text.lowercased()) // Shnderrimi i te dhenave hyrese nga textfields  me shkronja te vogla
+        
+      //bashkangjitja e te dhenes se referuar me larte ne databaze.
+      todoItemRef.setValue(todoItem.toAnyObject())
+    }
+    //Butoni Cancel ne  alert
     let cancelAction = UIAlertAction(title: "Cancel",
                                      style: .cancel)
     
+    
     alert.addTextField()
+    //Shtimi i dy butonave ne alert
     alert.addAction(saveAction)
     alert.addAction(cancelAction)
     
