@@ -63,32 +63,27 @@ class LoginViewController: UIViewController {
     }
   }
     
-    @IBAction func signUpDidTouch(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Register",
-                                      message: "Register",
-                                      preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            
+//Prezenton nje alert per te regjistruar ne User
+  @IBAction func signUpDidTouch(_ sender: AnyObject) {
+    //Krijimi i Alertit
+    let alert = UIAlertController(title: "Register",
+                                  message: "Register",
+                                  preferredStyle: .alert)
+    
+    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+      //Marja e te dhenave nga fushat e te dhenave(textfields)
+      let emailField = alert.textFields![0]
+      let passwordField = alert.textFields![1]
+      //Krijimi i Userit eshte funksion i gatshem  nga Firebase, vetem duhet te jipen te dhenat :emailin dhe fjalekalimin
+      Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+        if error == nil {
+            //Nese nuk ka gabime, llogaria e perdoruesit eshte krijuar.
+            //Per te vrtetuar kete perdorues te ri, thirret funksioni SignIn
+          Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!,
+                             password: self.textFieldLoginPassword.text!)
         }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel)
-        
-        alert.addTextField { textEmail in
-            textEmail.placeholder = "Enter your email"
-        }
-        
-        alert.addTextField { textPassword in
-            textPassword.isSecureTextEntry = true
-            textPassword.placeholder = "Enter your password"
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+      }
     }
-}
 
 extension LoginViewController: UITextFieldDelegate {
     
