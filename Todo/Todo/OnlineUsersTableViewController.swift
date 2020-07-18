@@ -14,7 +14,7 @@ class OnlineUsersTableViewController: UITableViewController {
   
   // Mark: Properties
   var currentUsers: [String] = []
-  let usersRef = Database.database().reference(withPath: "online)
+  let usersRef = Database.database().reference(withPath: "online")
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
