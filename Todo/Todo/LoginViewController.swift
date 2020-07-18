@@ -23,10 +23,20 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: UIViewController Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    //Krijimi i autintifikimit me dy parametra: auth dhe user
+    Auth.auth().addStateDidChangeListener() { auth, user in
+    //nese user nuk eshte nil vazhdo
+      if user != nil {
+        //Me ane te metodes performSegue kalohet nga nje screen ne tjetrin duke i caktuar identifikuesin
+        self.performSegue(withIdentifier: self.loginToList, sender: nil)
+        //Zbrazja e te dhenave pasi qe logini te jete ne rregull
+        self.textFieldLoginEmail.text = nil
+        self.textFieldLoginPassword.text = nil
+      }
     }
+  }
 
     // MARK: Actions
     @IBAction func loginDidTouch(_ sender: AnyObject) {
