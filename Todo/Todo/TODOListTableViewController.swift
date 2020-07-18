@@ -55,6 +55,24 @@ class TODOListTableViewController: UITableViewController {
        //Refreshimi i tabeles
       self.tableView.reloadData()
     })
+       Auth.auth().addStateDidChangeListener { auth, user in
+      guard let user = user else { return }
+      self.user = User(authData: user)
+      
+      let currentUserRef = self.usersRef.child(self.user.uid)
+      currentUserRef.setValue(self.user.email)
+      currentUserRef.onDisconnectRemoveValue()
+    }
+    //metoda per numerimin e userave
+    usersRef.observe(.value, with: { snapshot in
+      if snapshot.exists() {// nese ekzistojne usera
+        self.userCountBarButtonItem?.title = snapshot.childrenCount.description // numerimi i userave dhe vendosja e numrit ne titull te butonit te krijuar manualisht
+      } else {
+        // nese nuk gjindet asnje user vendos vleren "0"
+        self.userCountBarButtonItem?.title = "0"
+      }
+    })
+  }
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 3
