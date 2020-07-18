@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class TODOListTableViewController: UITableViewController {
 
   // MARK: Constants
   let listToUsers = "ListToUsers"
+  //Mark: Properties
+    var items : [TodoItem] = [] // inicializimi i modelit per listen e te dhenave Todo
+    var user: User! // inicializimi i modelit te Usar-ave
+    var userCountBarButtonItem: UIBarButtonItem! // Inicializimi i butonit ne navigation
+    
+    //Konektimi me Databaze
+    let ref = Database.database().reference(withPath: "todo-items") //krijimi i tabeles todo-items ne firebase
+    let userRef = Database.database().reference(withPath: "online") // krijimi i tabeles online per perdorues ne firebase
+    
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
