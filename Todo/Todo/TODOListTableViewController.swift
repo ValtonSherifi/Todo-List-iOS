@@ -168,7 +168,9 @@ class TODOListTableViewController: UITableViewController {
     present(alert, animated: true, completion: nil)
   }
   
+  //Funksionaliteti per dergimin nga butoni i krijuar me lart userCountBarButtonItem per te derguar ne screen-in per user-a
   @objc func userCountButtonDidTouch() {
     performSegue(withIdentifier: listToUsers, sender: nil)
   }
 }
+
