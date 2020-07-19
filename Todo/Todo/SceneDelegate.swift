@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Todo
 //
-//  Created by Djellza Rrustemi on 7/15/20.
+//  Created by Valton Sherifi on 7/15/20.
 //  Copyright © 2020 Valton Sherifi. All rights reserved.
 //
 
