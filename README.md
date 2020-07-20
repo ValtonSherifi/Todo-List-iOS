@@ -24,6 +24,12 @@ ToDo list is a simple iOS application designed for teams to save daily tasks in 
 <img src="https://i.ibb.co/1L4kqHr/1.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/TWWhjgH/2.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/CK5qr8W/3.png" height="581.6px" width="287.6px">
+<img src="https://i.ibb.co/3d45CGL/4.png" height="581.6px" width="287.6px">
+<img src="https://i.ibb.co/ZX3MYk3/5.png" height="581.6px" width="287.6px">
+<img src="https://i.ibb.co/YXv7d3W/6.png" height="581.6px" width="287.6px">
+<img src="https://i.ibb.co/zGh4LcQ/7.png" height="581.6px" width="287.6px">
+
+
 
 
 
