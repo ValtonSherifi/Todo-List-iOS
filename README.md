@@ -1,5 +1,5 @@
 
-ToDo list is a simple iOS application designed for teams to save daily tasks in order not to miss anything.
+ ToDo list is a simple iOS application designed for teams to save daily tasks in order to not miss anything.
 <h3><b>The advantage of this application: </b></h3>
 <br>It can be used in team-groups 
 <br>Each member can add a task or more
