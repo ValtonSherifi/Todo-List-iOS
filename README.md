@@ -1,3 +1,4 @@
+
 ToDo list is a simple iOS application designed for teams to save daily tasks in order not to miss anything.
 <h3><b>The advantage of this application: </b></h3>
 <br>It can be used in team-groups 
@@ -21,12 +22,15 @@ ToDo list is a simple iOS application designed for teams to save daily tasks in 
 
 <h3>Screenshot of the app </h3>
 <br>
+<div style="display:inline-block">
 <img src="https://i.ibb.co/1L4kqHr/1.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/TWWhjgH/2.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/CK5qr8W/3.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/3d45CGL/4.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/ZX3MYk3/5.png" height="581.6px" width="287.6px">
 <img src="https://i.ibb.co/YXv7d3W/6.png" height="581.6px" width="287.6px">
+</div>
+
 
 
 
